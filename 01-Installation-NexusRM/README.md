@@ -17,6 +17,7 @@ tar -zxvf  nexus-*.tar.gz
 ### 5. Move the nexus data into /opt. 
 ```
 mv nexus-3.51.1-03  /opt/nexus
+cd /opt/nexus/bin/
 ```
 
 ### 6. Run the Nexus
