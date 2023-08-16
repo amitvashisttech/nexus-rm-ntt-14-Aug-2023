@@ -19,3 +19,21 @@
 ### 9. Remote storage URL: https://repo1.maven.org/maven2
 
 ### 10. Click Create repository to complete the form.
+
+
+
+## Now we need to create a maven project. 
+
+### 1. Create a Dir : mkdir -p /root/maven-test
+
+### 2. cd /root/maven-test
+
+### 3. cp -rf /root/nexus-rm-ntt-14-Aug-2023/02-Proxy-Config/pom.xml 
+
+### 4. mkdir ~/.m2
+
+### 5. cp -rf /root/nexus-rm-ntt-14-Aug-2023/02-Proxy-Config/settings.xml ~/.m2/
+
+### 6. mvn clean package 
+
+### 7. Go to Nexus URL -> Browes proxy repo for data caching.  
