@@ -38,7 +38,7 @@
     <server>
       <id>nexus</id>
       <username>admin</username>
-      <password>redhat@123</password> 
+      <password>Redhat@123</password> 
     </server>
   </servers>
 </settings>
