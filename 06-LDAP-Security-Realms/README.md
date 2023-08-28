@@ -54,7 +54,7 @@ LAM - Ldap Accout Manager
 
 Change the password : redhat@123
 
---> Go to Genral Setting -> Server Profile -> Use Old Password -> Server Setting : 
+--> Go to Genral Setting -> Edit Server Profile -> Use Old Password -> Server Setting : 
  -> Tree Suffix : dc=example,dc=com 
  
  
