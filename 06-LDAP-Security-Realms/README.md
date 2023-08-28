@@ -58,7 +58,7 @@ Change the password : redhat@123
  -> Tree Suffix : dc=example,dc=com 
  
  
-Security settings
+### Security settings
 --> List of Valid User:  cn=admin,dc=example,dc=com
   
 --> Go to Accout Type [TAB]
