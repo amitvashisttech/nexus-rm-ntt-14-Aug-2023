@@ -1,32 +1,34 @@
-3. Gradle 
+## Gradle Demo 
 
-Step 1. Download Gradle 
-- https://gradle.org/next-steps/?version=8.3&format=bin
+### Step 1. Download Gradle 
+   - https://gradle.org/next-steps/?version=8.3&format=bin
 
-- wget 
+   - wget https://services.gradle.org/distributions/gradle-8.3-bin.zip
 
 
-Step 2. Unpack the distribution
+### Step 2. Unpack the distribution
 Linux & MacOS users
 
 Unzip the distribution zip file in the directory of your choosing, e.g.:
-
+```
 $ mkdir /opt/gradle
 $ unzip -d /opt/gradle gradle-8.3-bin.zip
 $ ls /opt/gradle/gradle-8.3
 LICENSE  NOTICE  bin  getting-started.html  init.d  lib  media
+```
 
-Step 3. Configure your system environment
+### Step 3. Configure your system environment
+```
+echo "export PATH=$PATH:/opt/gradle/gradle-8.3/bin" >> ~/.bashrc
+source ~/.bashrc
+```
 
-export PATH=$PATH:/opt/gradle/gradle-8.3/bin
-
-
-Step 4. Verify your installation
-
+### Step 4. Verify your installation
+```
 gradle -v
+```
 
-
-Step 5. Create a project dir:
+### Step 5. Create a project dir:
 
 # mkdir gradle-lib-nexus; cd gradle-lib-nexus; 
 
@@ -78,24 +80,27 @@ root@ldap:~/gradle-lib-nexus#
 
 
 
-Step 6. Create a gradle wrapper
+### Step 6. Create a gradle wrapper
 
 In order to ease the life of the programming team, we embed a Gradle wrapper in each Gradle project.
-
+```
 gradle wrapper --gradle-version 5.3.1 --distribution-type all
+```
 
-
-Step 7: Now we can test the generated Gradle Wrapper
+### Step 7: Now we can test the generated Gradle Wrapper
+```
 ./gradlew --version
+```
 
-
-Step 9: Create the gradle library
+### Step 9: Create the gradle library
 
 We will use gradle init in order to generate a basic gradle library
 
-./gradlew init --type java-library --project-name marketing
+```
+./gradlew init --type java-library --project-name sales
+```
 
-# ./gradlew init --type java-library --project-name marketing
+# ./gradlew init --type java-library --project-name sales
 
 Select build script DSL:
   1: groovy
@@ -108,33 +113,39 @@ Select test framework:
   3: spock
 Enter selection (default: junit) [1..3] 1
 
-Source package (default: marketing): 
+Source package (default: sales): 
 
 
 BUILD SUCCESSFUL in 10s
 2 actionable tasks: 2 executed
 #
 
-# ls  build/libs/marketing.jar
 
-Step 10: Build the project
-# ./gradlew clean build
 
+### Step 10: Build the project
+```
+ ./gradlew clean build
+```
+```
+ls  build/libs/sales.jar
+```
 
 Step 11: Publish the library to Nexus repository
 
+```
 Create the gradle.properties file
 ---------------------------------------
 repoUser=[your nexus user]
 repoPassword=[your nexus password]
 ---------------------------------------
-
-root@ldap:~/gradle-lib-nexus# cat settings.gradle  |grep -i marketing 
-rootProject.name = 'marketing'
+```
+```
+root@ldap:~/gradle-lib-nexus# cat settings.gradle  |grep -i sales 
+rootProject.name = 'sales'
 root@ldap:~/gradle-lib-nexus# 
+```
 
-
-Step 12: Update / Append the build.gradle file
+### Step 12: Update / Append the build.gradle file
 
 With the below paratmeters 
 ------------------------------------------------------------------
@@ -146,7 +157,7 @@ apply plugin: 'maven-publish'
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact("build/libs/marketing-$version"+".jar") {
+            artifact("build/libs/sales-$version"+".jar") {
                 extension 'jar'
             }
         }
