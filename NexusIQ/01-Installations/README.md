@@ -1,5 +1,11 @@
 # Nexus IQ Installation 
 
+### Pre-request: 
+-> RAM : 8 GB 
+-> CPU : 4 CPU
+
+### Step 0: Update the VM Configuration, in case using vagrant the please update the vagratfile for the same. 
+
 ### Step 1. Install Java JDK & Maven 
 ```
 apt-get update; apt-get install openjdk-8-jdk maven -y 
