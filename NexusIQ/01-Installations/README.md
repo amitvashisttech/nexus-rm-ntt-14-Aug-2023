@@ -5,6 +5,22 @@
 -> CPU : 4 CPU
 
 ### Step 0: Update the VM Configuration, in case using vagrant the please update the vagratfile for the same. 
+```
+-> Open the cmder
+-> cd devops-lab/vagrant-setup/devops
+-> ls 
+```
+```
+-> vim Vagrantfile
+```
+```
+Update the following: 
+v.memory = 8096
+v.cpu    = 4 
+```
+```
+vagrant up master
+```
 
 ### Step 1. Install Java JDK & Maven 
 ```
